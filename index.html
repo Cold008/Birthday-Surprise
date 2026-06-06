@@ -1,0 +1,97 @@
+<!DOCTYPE html><html>
+<head>
+    <title>Birthday Surprise</title><style>
+        body{
+            font-family: Arial, sans-serif;
+            background:pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .page{
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+        }
+        .active{
+            display: block;
+        }
+        button{
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="page active"
+    id="page1">
+<h1>Hiii</h1>
+<button onclick="showPage(2)">Next</button></div><div class="page"
+id="page2"
+<h1>Omooo</h1>
+<button onclick="showPage(3)">Continue</button>
+</div><div class="page" id="page3">
+    <h1>Are you in for what's next?</h1>
+    <button onclick="showPage(4)">
+        Yes
+    </button>
+    <button onclick="endGame()">
+        No
+    </button>
+</div>
+<div class="page" id="page4">
+        <h1>You sure?</h1>
+        <button onclick="showPage(5)">
+            Very sure
+        </button>
+    </div><div class="page" id="page5">
+        <h1>Still here?</h1>
+        <button onclick="showPage(6)">
+            Yes
+        </button>
+    </div><div class="page" id="page6">
+        <h1> HAPPYYYY BIRTHDAYYYYYYY</h1><p>
+            To one of the most amazing people I've ever met....
+
+            Thank you for the laughter, the memories, the random conversations and all the moments we've shared.
+
+            Today is your day and I hope thus new year brings you joy, peace, growthnand everything your heart desires.
+
+            Happy Birthday Ml!
+        </p>
+    </div>
+    <script>
+        function showPage(number){
+            let pages=
+            document.querySelectorAll(".page");
+            pages.forEach(page=>{
+                page.classList.remove("active");
+            });
+
+            document
+            .getElementById("page"+number)
+            .classList.add("active");
+        }
+
+        function endGame(){
+
+            let pages=
+            document.querySelectorAll(".page");
+
+            pages.forEach(page=>{
+                page.classList.remove("active");
+            });
+
+            document.body.innerHTML=
+            "<h1> Mission Cancenlled </h1>";
+        }
+    </script>
+</body>
+</html>
